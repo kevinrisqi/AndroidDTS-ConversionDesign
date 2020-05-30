@@ -1,7 +1,11 @@
 package polinema.ac.id.dtschapter03_starter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class WelcomeSlideCalendar extends AppCompatActivity {
 
@@ -10,6 +14,27 @@ public class WelcomeSlideCalendar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_slide_calendar);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
+
+        Button getStarted = findViewById(R.id.btn_get_started);
+        TextView login = findViewById(R.id.login_text);
+
+        getStarted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeSlideCalendar.this, WelcomeSlideSuperhero.class);
+                startActivity(intent);
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeSlideCalendar.this, WelcomeBack.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 }
